@@ -1,0 +1,97 @@
+body{
+    margin:0; padding:0;
+    }
+     
+    #popUpBox {
+        position:absolute; 
+        display:none;  
+        background:#1ab394;
+        cursor: pointer;
+        color: #fff;
+        font: bold 14px open sans;
+        padding:0px 0px;
+    }
+     
+    #popUpBox:hover{
+        background:#686b6d;
+        color: #fff;
+    }
+     
+    .content {
+        position:relative; 
+        margin:10px auto; 
+        height:auto; 
+        width:900px;
+        border:1px solid #ccc; 
+        padding:10px;
+    }
+     
+    .twrap{
+        position:relative;
+        width:920px;
+        margin:10px auto;
+        height:auto;
+    }
+     
+    #replytext{
+        position:relative;
+        width:600px;
+        margin:0;
+        height:150px;
+    }
+    
+    .note-editor .note-editable{
+        padding: 100px 100px 100px 200px;
+    }
+    
+    /* Style The hover popup  */
+    #footnotediv {
+        position:absolute;
+        background-color:white;
+        padding:3px;
+        padding-left:12px;
+        padding-right:12px;
+        border:1px solid #CDBBB5;
+        box-shadow:#555 0 0 10px;
+        -webkit-box-shadow:#555 0 0 10px;
+        -moz-box-shadow:0 0 10px #555;
+        z-index:99;
+    }
+    
+    /* Style Reference Marks  */
+    .fn-ref-mark {
+        /*  font-size: 80%;
+           vertical-align: super;  has tendancy of skewing line spacing.  fix? */
+        }
+    
+    /* Style Footnote Heading Title  */
+    #fn-heading {
+        font-weight: bold;
+        }
+    
+    /* Style Footnote Text  */
+    .fn-text {
+        text-decoration:none;
+        }
+    
+    /* If you want to style just the back link
+     after the footnote text   */
+    a.fn-text {
+        border-bottom:none;
+    }
+    
+    /* If you use an image as a footnote
+     text backlink   */
+    a.fn-text img {
+        margin:0;
+        padding:0;
+        border:0;
+    }
+    
+    textarea {width:320px; height:100px; border: 1px solid #000;}
+    #zona-drop {
+      max-width: 100%;
+      padding: 15px;
+      /*border: 4px dashed #d3d3d3;
+      min-height: 300px;*/
+    }
