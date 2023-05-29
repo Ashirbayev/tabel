@@ -90,25 +90,29 @@
         $db = new My_sql_db();
         $sql_pers = "select id, state from EMPLOYEES where state = 2 or state = 3 or state = 4 or state = 5 or state = 6 or state = 9 order by state";
         $list_pers = $db -> Select($sql_pers);
+        $ts = 2571;
         for($i = 1; $i <= date("t",strtotime('01'.$date_my)); $i++)
         {
             //$db = new DB();
+
+            $ts = $ts + 1;
             $weekend = date("w",strtotime($date_my.$i));
             echo '$weekend '.$weekend;
             if($weekend==0 || $weekend==6)
             {
                 echo 'weekend';
-                $sql = "INSERT INTO TABLE_OTHER (ID, WEEK_DAY, VALUE, EMP_ID, DAY_DATE, STATE) VALUES ('', '$i', 'В', '$emp_id', '$date_my$i', 1)";
+                $sql = "INSERT INTO TABLE_OTHER (ID, WEEK_DAY, VALUE, EMP_ID, DAY_DATE, STATE) VALUES ($ts, '$i', 'В', '$emp_id', '$date_my$i', 1)";
                 $db -> Execute($sql);
                 echo "$date_my$i".'B<br>';
             } 
                 else 
             {
                 echo 'budni';
-                $sql = "INSERT INTO TABLE_OTHER (ID, WEEK_DAY, VALUE, EMP_ID, DAY_DATE, STATE) VALUES ('', '$i', '8', '$emp_id', '$date_my$i', 1)";
+                $sql = "INSERT INTO TABLE_OTHER (ID, WEEK_DAY, VALUE, EMP_ID, DAY_DATE, STATE) VALUES ($ts, '$i', '8', '$emp_id', '$date_my$i', 1)";
                 $db->Execute($sql);
                 echo "$date_my$i".'8<br>';
             }
+
         }
     }    
 ?>

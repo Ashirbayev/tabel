@@ -155,7 +155,7 @@
         $DOCNUM = trim($_POST['DOCNUM']);
         $DOCTYPE = trim($_POST['DOCTYPE']);
         $DOCDATE = trim($_POST['DOCDATE']);
-        $DOCPLACE = trim($_POST['DOCPLACE']);
+        $DOCPLACE = NULL; //trim($_POST['DOCPLACE']);
         $BRANCHID = trim($_POST['BRANCHID']);
         $MOB_PHONE = trim($_POST['MOB_PHONE']);
         $LASTNAME2 = trim($_POST['LASTNAME2']);
@@ -179,13 +179,13 @@
                                         '$nationality', 
                                         '$DATE_POST',
                                         '2', 
-                                        '$JOB_SP', 
+                                        1, 
                                         '$JOB_POSITION', 
                                         '$OKLAD', 
                                         '$DOCNUM',
                                         '$DOCTYPE',
                                         '$DOCDATE',
-                                        '$DOCPLACE',
+                                        NULL,
                                         '$FACT_ADDRESS_COUNTRY_ID',
                                         '$FACT_ADDRESS_CITY',
                                         '$FACT_ADDRESS_STREET',
@@ -196,7 +196,7 @@
                                         '$PERSONAL_EMAIL',
                                         '$CONTRACT_JOB_NUM',
                                         '$PERSONAL_EMAIL',
-                                        '10')";
+                                        '2')";
         echo $sql;
         $listEmployee = $db -> Execute($sql);
 
@@ -206,7 +206,7 @@
         $lenth_history = count($list_history);
         $lenth_history = $lenth_history + 1;
 
-        $sql_update_history = "insert into T2_CARD (ID, EVENT_DATE, BRANCH_ID, DEPARTMENT, POSITION, SALARY, ID_PERSON, ACT_ID) values ($lenth_history+9, '$DATE_POST', '$BRANCHID', '$JOB_SP', '$JOB_POSITION', '$OKLAD', '$sequance', '1')";
+        $sql_update_history = "insert into T2_CARD (ID, EVENT_DATE, BRANCH_ID, DEPARTMENT, POSITION, SALARY, ID_PERSON, ACT_ID) values ($lenth_history, '$DATE_POST', '$BRANCHID', '$JOB_SP', '$JOB_POSITION', '$OKLAD', $lenth_t2_card, '1')";
         $update_history = $db -> Execute($sql_update_history);
 
         $sql_update_last_JB_num = "update JOB_CONTR_NUM set JOB_CONTR_NUM = JOB_CONTR_NUM+1 where ID = 1";
